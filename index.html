@@ -4,77 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <input type="file" id="inputFile">
-    <div id="myDiv"></div>
-    <section>全体の設定
-        <p>グラフの幅: <input type="number" id="graphWidth"></p>
-        <p>グラフの高さ: <input type="number" id="graphHeight"></p>
-    </section>
-    <section>x軸の設定
-        <p>軸のタイトル: <input type="text" id="xAxisTitleText"></p>
-        <p>軸のタイトルのサイズ: <input type="number" id="xAxisTitleFontSize"></p>
-        <p>軸のラベルのサイズ: <input type="number" id="xAxisTickfontSize"></p>
-        <p>軸の表示 (上): 
-            <select id="xAxisMirror">
-                <option value=true>軸のみ</option>
-                <option value="ticks">軸と目盛</option>
-                <option value=false>なし</option>
-            </select>
-        </p>
-        <p>目盛の向き: 
-            <select id="xAxisTicks">
-                <option value="inside">inside</option>
-                <option value="outside">outside</option>
-                <option value="">なし</option>
-            </select>
-        </p>
-        <p>目盛の間隔: <input type="number" id="xAxisDtick"></p>
-        <p>目盛の長さ: <input type="number" id="xAxisTicklen"></p>
-        <p>目盛の幅: <input type="number" id="xAxisTickwidth"></p>
-        <p>軸の幅: <input type="number" id="xAxisLinewidth"></p>
-    </section>
-    <section>y軸の設定
-        <p>軸のタイトル: <input type="text" id="yAxisTitleText"></p>
-        <p>軸のタイトルのサイズ: <input type="number" id="yAxisTitleFontSize"></p>
-        <p>軸のラベルのサイズ: <input type="number" id="yAxisTickfontSize"></p>
-        <p>軸の表示 (上): 
-            <select id="yAxisMirror">
-                <option value=true>軸のみ</option>
-                <option value="ticks">軸と目盛</option>
-                <option value=false>なし</option>
-            </select>
-        </p>
-        <p>目盛の向き: 
-            <select id="yAxisTicks">
-                <option value="inside">inside</option>
-                <option value="outside">outside</option>
-                <option value="">なし</option>
-            </select>
-        </p>
-        <p>目盛の間隔: <input type="number" id="yAxisDtick"></p>
-        <p>目盛の長さ: <input type="number" id="yAxisTicklen"></p>
-        <p>目盛の幅: <input type="number" id="yAxisTickwidth"></p>
-        <p>軸の幅: <input type="number" id="yAxisLinewidth"></p>
-        <p>ゼロの線: 
-            <select id="yAxisZeroline">
-                <option value="true">あり</option>
-                <option value="false">なし</option>
-            </select>
-        </p>
-    </section>
-    <section>レジェンド
-        <p>枠線の太さ: <input type="number" id="legendBorderwidth"></p>
-        <p>タイトル: <input type="text" id="legendTitleText"></p>
-        <p>タイトルのフォントサイズ: <input type="number" id="legendTitleSize"></p>
-        <p>位置 x: <input type="number" id="legendX"></p>
-        <p>位置 y: <input type="number" id="legendY"></p>
+    <div class="container">
+        <div id="myDiv"></div>
+        <div class="config">
+            <div class="tab-wrap">
 
-        
-    </section>
+                <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">全体の設定</label>
+                <div class="tab-content">
+                    <p>グラフの幅: <input type="number" id="graphWidth"></p>
+                    <p>グラフの高さ: <input type="number" id="graphHeight"></p>
+                </div>
+
+                <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">x軸の設定</label>
+                <div class="tab-content">
+                    <p>軸のタイトル: <input type="text" id="xAxisTitleText"></p>
+                    <p>軸のタイトルのサイズ: <input type="number" id="xAxisTitleFontSize"></p>
+                    <p>軸のラベルのサイズ: <input type="number" id="xAxisTickfontSize"></p>
+                    <p>軸の表示 (上): 
+                        <select id="xAxisMirror">
+                            <option value="true">軸のみ</option>
+                            <option value="ticks">軸と目盛</option>
+                            <option value="false">なし</option>
+                        </select>
+                    </p>
+                    <p>目盛の向き: 
+                        <select id="xAxisTicks">
+                            <option value="inside">inside</option>
+                            <option value="outside">outside</option>
+                            <option value="">なし</option>
+                        </select>
+                    </p>
+                    <p>目盛の間隔: <input type="number" id="xAxisDtick"></p>
+                    <p>目盛の長さ: <input type="number" id="xAxisTicklen"></p>
+                    <p>目盛の幅: <input type="number" id="xAxisTickwidth"></p>
+                    <p>軸の幅: <input type="number" id="xAxisLinewidth"></p>
+                </div>
+
+                <input id="TAB-03" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-03">y軸の設定</label>
+                <div class="tab-content">
+                    <p>軸のタイトル: <input type="text" id="yAxisTitleText"></p>
+                    <p>軸のタイトルのサイズ: <input type="number" id="yAxisTitleFontSize"></p>
+                    <p>軸のラベルのサイズ: <input type="number" id="yAxisTickfontSize"></p>
+                    <p>軸の表示 (上): 
+                        <select id="yAxisMirror">
+                            <option value=true>軸のみ</option>
+                            <option value="ticks">軸と目盛</option>
+                            <option value=false>なし</option>
+                        </select>
+                    </p>
+                    <p>目盛の向き: 
+                        <select id="yAxisTicks">
+                            <option value="inside">inside</option>
+                            <option value="outside">outside</option>
+                            <option value="">なし</option>
+                        </select>
+                    </p>
+                    <p>目盛の間隔: <input type="number" id="yAxisDtick"></p>
+                    <p>目盛の長さ: <input type="number" id="yAxisTicklen"></p>
+                    <p>目盛の幅: <input type="number" id="yAxisTickwidth"></p>
+                    <p>軸の幅: <input type="number" id="yAxisLinewidth"></p>
+                    <p>y=0のライン: 
+                        <select name="" id="yAxisZeroline"> 
+                            <option value="true">あり</option>
+                            <option value="false">なし</option>
+                        </select>
+                    </p>
+                    <p>y=0のラインの太さ: <input type="number" id="yAxisZerolinewidth"></p>
+                </div>
+
+                <input id="TAB-04" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-04">レジェンド</label>
+                <div class="tab-content">
+                    <p>枠線の太さ: <input type="number" id="legendBorderwidth"></p>
+                    <p>タイトル: <input type="text" id="legendTitleText"></p>
+                    <p>タイトルのフォントサイズ: <input type="number" id="legendTitleSize"></p>
+                    <p>位置 x: <input type="number" id="legendX"></p>
+                    <p>位置 y: <input type="number" id="legendY"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
 
         
     <script src="script.js"></script>

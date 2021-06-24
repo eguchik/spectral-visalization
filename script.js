@@ -43,7 +43,12 @@ reader.addEventListener('load', () => {
       y: spectra[i],
       type: 'scatter',
       mode: 'lines',
-      name: sampleName[i]
+      name: sampleName[i],
+      marker: {
+        line: {
+          colorscale: 'Jet'
+        }
+      }
     }
     lines.push(trace)
   }
@@ -92,6 +97,7 @@ reader.addEventListener('load', () => {
     }
   };
   Plotly.newPlot('myDiv', lines, layout);
+
 })
 
 
@@ -109,7 +115,7 @@ graphHeight.addEventListener('change', (event) => {
 
 const xAxisTitleText = document.getElementById('xAxisTitleText');
 xAxisTitleText.addEventListener('change', (event) => {
-  layout.xaxis.title = event.target.value;
+  layout.xaxis.title.text = event.target.value;
   Plotly.newPlot('myDiv', lines, layout);
 })
 
@@ -132,7 +138,7 @@ xAxisMirror.addEventListener('change', (event) => {
 })
 
 const xAxisTicks = document.getElementById('xAxisTicks');
-xAxisTicks.addEventListener('change', () => {
+xAxisTicks.addEventListener('change', (event) => {
   layout.xaxis.ticks = event.target.value;
   Plotly.newPlot('myDiv', lines, layout);
 })
@@ -165,7 +171,7 @@ xAxisLinewidth.addEventListener('change', (event) => {
 
 const yAxisTitleText = document.getElementById('yAxisTitleText');
 yAxisTitleText.addEventListener('change', (event) => {
-  layout.yaxis.title = event.target.value;
+  layout.yaxis.title.text = event.target.value;
   Plotly.newPlot('myDiv', lines, layout);
 })
 
@@ -220,6 +226,12 @@ yAxisLinewidth.addEventListener('change', (event) => {
 const yAxisZeroline = document.getElementById('yAxisZeroline');
 yAxisZeroline.addEventListener('change', (event) => {
   layout.yaxis.zeroline = event.target.value;
+  Plotly.newPlot('myDiv', lines, layout);
+})
+
+const yAxisZerolinewidth = document.getElementById('yAxisZerolinewidth');
+yAxisZerolinewidth.addEventListener('change', (event) => {
+  layout.yaxis.zerolinewidth = event.target.value;
   Plotly.newPlot('myDiv', lines, layout);
 })
 
