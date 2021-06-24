@@ -89,7 +89,15 @@
 
                 <input id="TAB-05" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-05">カラー</label>
                 <div class="tab-content">
-                    <p>テストカラー: <input type="color" id="testColor"></p>
+                    <p>Color: <input type="color" id="traceLineColor"></p>
+                    <p>Line width: <input type="number" id="traceLineWidth"></p>
+                    <p>Line style:  
+                        <select id="traceLineDash">
+                            <option value="solid">Solid</option>
+                            <option value="dot">Dot</option>
+                            <option value="dashdot">Dashdot</option>
+                        </select>
+                    </p>
 
             </div>
         </div>
