@@ -6,11 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
 </head>
 <body>
+    <input type="file" id="inputFile">
     <div id="myDiv"></div>
-    <input id='input' type="number">
+    <section>全体の設定
+        <p>グラフの幅: <input type="number" id="graphWidth"></p>
+        <p>グラフの高さ: <input type="number" id="graphHeight"></p>
+    </section>
+    <section>x軸の設定
+        <p>軸のタイトル: <input type="text" id="xAxisTitleText"></p>
+        <p>軸のタイトルのサイズ: <input type="number" id="xAxisTitleFontSize"></p>
+        <p>軸のラベルのサイズ: <input type="number" id="xAxisTickfontSize"></p>
+        <p>軸の表示 (上): 
+            <select id="xAxisMirror">
+                <option value=true>軸のみ</option>
+                <option value="ticks">軸と目盛</option>
+                <option value=false>なし</option>
+            </select>
+        </p>
+        <p>目盛の向き: 
+            <select id="xAxisTicks">
+                <option value="inside">inside</option>
+                <option value="outside">outside</option>
+                <option value="">なし</option>
+            </select>
+        </p>
+        <p>目盛の間隔: <input type="number" id="xAxisDtick"></p>
+        <p>目盛の長さ: <input type="number" id="xAxisTicklen"></p>
+        <p>目盛の幅: <input type="number" id="xAxisTickwidth"></p>
+        <p>軸の幅: <input type="number" id="xAxisLinewidth"></p>
+    </section>
+    <section>y軸の設定
+        <p>軸のタイトル: <input type="text" id="yAxisTitleText"></p>
+        <p>軸のタイトルのサイズ: <input type="number" id="yAxisTitleFontSize"></p>
+        <p>軸のラベルのサイズ: <input type="number" id="yAxisTickfontSize"></p>
+        <p>軸の表示 (上): 
+            <select id="yAxisMirror">
+                <option value=true>軸のみ</option>
+                <option value="ticks">軸と目盛</option>
+                <option value=false>なし</option>
+            </select>
+        </p>
+        <p>目盛の向き: 
+            <select id="yAxisTicks">
+                <option value="inside">inside</option>
+                <option value="outside">outside</option>
+                <option value="">なし</option>
+            </select>
+        </p>
+        <p>目盛の間隔: <input type="number" id="yAxisDtick"></p>
+        <p>目盛の長さ: <input type="number" id="yAxisTicklen"></p>
+        <p>目盛の幅: <input type="number" id="yAxisTickwidth"></p>
+        <p>軸の幅: <input type="number" id="yAxisLinewidth"></p>
+        <p>ゼロの線: 
+            <select id="yAxisZeroline">
+                <option value="true">あり</option>
+                <option value="false">なし</option>
+            </select>
+        </p>
+    </section>
+    <section>レジェンド
+        <p>枠線の太さ: <input type="number" id="legendBorderwidth"></p>
+        <p>タイトル: <input type="text" id="legendTitleText"></p>
+        <p>タイトルのフォントサイズ: <input type="number" id="legendTitleSize"></p>
+        <p>位置 x: <input type="number" id="legendX"></p>
+        <p>位置 y: <input type="number" id="legendY"></p>
+
+        
+    </section>
+
+        
     <script src="script.js"></script>
 </body>
 </html>
