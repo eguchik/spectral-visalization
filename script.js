@@ -44,10 +44,9 @@ reader.addEventListener('load', () => {
       type: 'scatter',
       mode: 'lines',
       name: sampleName[i],
-      marker: {
-        line: {
-          colorscale: 'Jet'
-        }
+      line: {
+        color: '',
+        width: 1
       }
     }
     lines.push(trace)
@@ -267,3 +266,10 @@ legendY.addEventListener('change', (event) => {
   Plotly.newPlot('myDiv', lines, layout);
 })
 
+
+
+const testColor = document.getElementById('testColor');
+testColor.addEventListener('change', (event) => {
+  lines[0].line.color = event.target.value;
+  Plotly.newPlot('myDiv', lines, layout);
+})
