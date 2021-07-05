@@ -110,6 +110,19 @@ reader.addEventListener('load', () => {
     }
   };
   Plotly.newPlot('myDiv', lines, layout);
+
+
+  let selectPlot = document.getElementById('selectPlot');
+  for (value of sampleName) {
+    let option = document.createElement('option');
+    option.setAttribute('value', value);
+    option.innerHTML = value;
+    selectPlot.appendChild(option);
+  };
+
+
+
+
 })
 
 
@@ -269,21 +282,43 @@ legendY.addEventListener('change', (event) => {
 
 
 
+
+// change line style
 const traceLineColor = document.getElementById('traceLineColor');
 traceLineColor.addEventListener('change', (event) => {
-  lines[0].line.color = event.target.value;
-  Plotly.newPlot('myDiv', lines, layout);
+  const selectPlot = document.getElementById('selectPlot');
+  value = selectPlot.value;
+  for (let i = 0; i < nSample; i++) {
+    if (lines[i].name == value) {
+      lines[i].line.color = event.target.value;
+      Plotly.newPlot('myDiv', lines, layout);
+    }
+  }
 })
 
 const traceLineWidth = document.getElementById('traceLineWidth');
 traceLineWidth.addEventListener('change', (event) => {
-  lines[0].line.width = event.target.value;
-  Plotly.newPlot('myDiv', lines, layout);
+  const selectPlot = document.getElementById('selectPlot');
+  value = selectPlot.value;
+  for (let i = 0; i < nSample; i++) {
+    if (lines[i].name == value) {
+      lines[i].line.width = event.target.value;
+      Plotly.newPlot('myDiv', lines, layout);
+    }
+  }
 })
+
 
 const traceLineDash = document.getElementById('traceLineDash');
 traceLineDash.addEventListener('change', (event) => {
-  lines[0].line.dash = event.target.value;
-  Plotly.newPlot('myDiv', lines, layout);
+  const selectPlot = document.getElementById('selectPlot');
+  value = selectPlot.value;
+  for (let i = 0; i < nSample; i++) {
+    if (lines[i].name == value) {
+      lines[i].line.dash = event.target.value;
+      Plotly.newPlot('myDiv', lines, layout);
+    }
+  }
 })
+
 
